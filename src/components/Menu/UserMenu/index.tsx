@@ -3,7 +3,6 @@ import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 import {
   Flex,
   LogoutIcon,
-  RefreshIcon,
   useModal,
   UserMenu as UIKitUserMenu,
   UserMenuDivider,
@@ -69,19 +68,7 @@ const UserMenu = () => {
           isWrongNetwork={isWrongNetwork}
           onPresentWalletModal={onClickWalletMenu}
         />
-        <UserMenuItem as="button" disabled={isWrongNetwork} onClick={onPresentTransactionModal}>
-          {t('Recent Transactions')}
-          {hasPendingTransactions && <RefreshIcon spin />}
-        </UserMenuItem>
-        <UserMenuDivider />
-        <UserMenuItem
-          as="button"
-          disabled={isWrongNetwork}
-          onClick={() => router.push(`${nftsBaseUrl}/profile/${account.toLowerCase()}`)}
-        >
-          {t('Your NFTs')}
-        </UserMenuItem>
-        <ProfileUserMenuItem isLoading={isLoading} hasProfile={hasProfile} disabled={isWrongNetwork} />
+        
         <UserMenuDivider />
         <UserMenuItem as="button" onClick={logout}>
           <Flex alignItems="center" justifyContent="space-between" width="100%">

@@ -20,6 +20,7 @@ const sentryWebpackPluginOptions = {
 
 /** @type {import('next').NextConfig} */
 const config = {
+  distDir: 'build',
   compiler: {
     styledComponents: true,
   },
