@@ -25,6 +25,10 @@
     "postinstall": "yarn run typechain",
     "typechain": "typechain --out-dir src/config/abi/types --target=ethers-v5 \"src/config/abi/*.json\""
   },
+  "engines": {
+    "node": ">=16.8.0",
+    "npm": ">=7.21.0"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
